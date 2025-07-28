@@ -1,5 +1,5 @@
 # Usar imagen base con Maven incluido
-FROM maven:3.9.4-openjdk-17-slim AS build
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY src src
 RUN mvn clean package -DskipTests
 
 # Etapa final con solo JRE
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-alpine
 
 # Establecer directorio de trabajo
 WORKDIR /app
