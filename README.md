@@ -98,10 +98,13 @@ mvn test
 - **CORS** configurado para frontend
 - **Endpoints públicos**: GET de dispositivos, empresa, banners
 
-## 👥 Autor
+## Demostración en Video
 
-Desarrollado para proyecto académico de tienda de dispositivos electrónicos.
+Puedes ver el funcionamiento completo de la aplicación en el siguiente enlace:
+https://drive.google.com/drive/folders/1CV__0EaDBY7AxtOuttecwbbiK85R3bMP?usp=drive_link
 
-## 📄 Licencia
+## Monitoreo de Métricas
 
-Este proyecto es de uso académico.
+La aplicación cuenta con monitoreo habilitado mediante Spring Boot Actuator y VisualVM. Puedes acceder a las métricas de solicitudes HTTP desde:
+http://localhost:8081/actuator/metrics/http.server.requests
+
