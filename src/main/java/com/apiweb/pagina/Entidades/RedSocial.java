@@ -1,0 +1,27 @@
+package com.apiweb.pagina.Entidades;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "red_social")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class RedSocial {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+    private String url;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "footer_id")
+    private Footer footer;
+} 

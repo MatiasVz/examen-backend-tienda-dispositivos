@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: tienda-dispositivos-backend
+    env: java
+    buildCommand: mvn clean install -DskipTests
+    startCommand: java -jar target/pagina-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: DATABASE_URL
+        value: jdbc:postgresql://dpg-ctestrqg1b2c73c7ug6g-a.oregon-postgres.render.com/tienda_dispositivos_db
+      - key: DB_USERNAME
+        value: tienda_dispositivos_user
+      - key: DB_PASSWORD
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
